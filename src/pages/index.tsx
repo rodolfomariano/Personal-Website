@@ -1,12 +1,14 @@
-import type { NextPage } from 'next'
+import Head from 'next/head'
 import { Container } from '../styles/Home.styles'
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Container>
-      <h1>Olá</h1>
+      <Head>
+        <title>Home</title>
+      </Head>
+
+      <h1>Home</h1>
     </Container>
   )
 }
-
-export default Home

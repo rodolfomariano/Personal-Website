@@ -1,13 +1,7 @@
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
@@ -19,7 +13,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600:700&family=Outfit:wght@300&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Outfit:wght@300&display=swap"
             rel="stylesheet"
           />
         </Head>
@@ -31,5 +25,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument
