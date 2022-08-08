@@ -17,7 +17,7 @@ export const LayoutContent = styled.div`
 export const DotsContainer = styled.div`
   position: absolute;
   top: 24px;
-  left: 32px;
+  left: 56px;
 `
 
 export const MenuList = styled.nav`
@@ -83,7 +83,7 @@ export const SocialMediaContainer = styled.div`
   position: absolute;
   z-index: 900;
   bottom: 56px;
-  left: 32px;
+  left: 56px;
 
   h3 {
     font-family: 'Outfit';

@@ -67,27 +67,27 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         )}
 
         <Content>{children}</Content>
-
-        {asPath === '/' && (
-          <SocialMediaContainer>
-            <h3>Mídias Sociais</h3>
-
-            <ul>
-              <li>
-                <Link href="https://br.linkedin.com/in/rodolfo-mariano-de-souza-75106249">
-                  <a target="_blank">Linkedin</a>
-                </Link>
-              </li>
-              <span>&#9679;</span>
-              <li>
-                <Link href="https://github.com/rodolfomariano">
-                  <a target="_blank">GitHub</a>
-                </Link>
-              </li>
-            </ul>
-          </SocialMediaContainer>
-        )}
       </LayoutContent>
+
+      {asPath === '/' && (
+        <SocialMediaContainer>
+          <h3>Mídias Sociais</h3>
+
+          <ul>
+            <li>
+              <Link href="https://br.linkedin.com/in/rodolfo-mariano-de-souza-75106249">
+                <a target="_blank">Linkedin</a>
+              </Link>
+            </li>
+            <span>&#9679;</span>
+            <li>
+              <Link href="https://github.com/rodolfomariano">
+                <a target="_blank">GitHub</a>
+              </Link>
+            </li>
+          </ul>
+        </SocialMediaContainer>
+      )}
 
       <CodeImageContainer>
         <CodeImage />
