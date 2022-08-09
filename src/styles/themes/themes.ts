@@ -7,6 +7,8 @@ export const defaultTheme = {
   title: '#DADADA',
   text: '#D0D0D0',
 
+  link: '#7C74DA',
+
   tag: '#B3B1EF',
   props: '#438E61',
   string: '#E3AD00',

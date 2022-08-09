@@ -9,7 +9,6 @@ export const Container = styled.main`
   gap: 48px;
 `
 export const PersonalData = styled.section`
-  flex: 1;
   height: 350px;
 
   display: flex;
@@ -136,6 +135,63 @@ export const Row = styled.div`
   background-color: ${({ theme }) => theme['gray-800']};
 `
 
-export const Study = styled.div``
+export const Study = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 24px;
+  padding-right: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme['gray-700']};
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme['gray-800']};
+    border-radius: 4px;
+  }
+`
+
+export const StudyOptionsContainer = styled.div`
+  margin-bottom: 24px;
+
+  display: flex;
+  gap: 24px;
+`
+
+export const StudyOptionButton = styled.button`
+  background: transparent;
+  border: none;
+  color: ${({ theme }) => theme['gray-700']};
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: 300;
+  transition: 300ms;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &.active {
+    color: ${({ theme }) => theme.title};
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.title};
+  }
+`
+
+export const StudyCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`
 
 export const Skills = styled.div``
