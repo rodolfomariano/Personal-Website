@@ -90,7 +90,51 @@ export const PersonalDescription = styled.div`
   }
 `
 
-export const TimeLine = styled.div``
+export const TimeLine = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 24px;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme['gray-700']};
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme['gray-800']};
+    border-radius: 4px;
+  }
+`
+
+export const TimeLineContent = styled.div`
+  position: relative;
+  flex: 1;
+  padding: 24px 24px 24px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`
+
+export const Row = styled.div`
+  position: absolute;
+  top: 0;
+  left: 28px;
+  z-index: 1;
+  width: 8px;
+  height: 90%;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme['gray-800']};
+`
 
 export const Study = styled.div``
 

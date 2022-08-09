@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import { Book, Clock, Sparkle, User } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+import { TimeLineCard } from '../../components/TimeLineCard'
 import { UserImage } from '../../components/UserImage'
 import {
   Container,
   PersonalData,
   PersonalDescription,
+  Row,
   Skills,
   Study,
   TabesHeaderButton,
@@ -14,6 +16,7 @@ import {
   TabsContainer,
   TabsHeader,
   TimeLine,
+  TimeLineContent,
 } from './styles'
 
 export default function About() {
@@ -104,6 +107,22 @@ export default function About() {
             <TableContent>
               <TimeLine>
                 <h1>Linha do tempo</h1>
+
+                <TimeLineContent>
+                  <TimeLineCard
+                    period="Agora"
+                    office="Em transição de carreira"
+                    occupation="Buscado minha primeira oportunidade como dev"
+                  />
+
+                  <TimeLineCard
+                    period="Fev 2014 à Jan 2022"
+                    office="Assistente de informática"
+                    occupation="Fazia a manutenção dos computadores e suporte em departamentos."
+                  />
+
+                  <Row />
+                </TimeLineContent>
               </TimeLine>
             </TableContent>
 

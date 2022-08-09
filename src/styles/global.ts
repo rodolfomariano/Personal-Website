@@ -5,6 +5,9 @@ export const GlobalStyled = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    scrollbar-color: ${({ theme }) => theme['gray-700']} ${({ theme }) =>
+  theme['gray-800']};
   }
 
   html,
@@ -14,6 +17,21 @@ export const GlobalStyled = createGlobalStyle`
     font-family: 'Nunito', sans-serif;
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.text};
+    -webkit-font-smoothing: antialiased;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme['gray-700']};
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme['gray-800']};
+      border-radius: 4px;
+    }
   }
 
 
