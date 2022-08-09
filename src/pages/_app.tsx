@@ -1,3 +1,4 @@
+import { AnimateSharedLayout } from 'framer-motion'
 import type { AppProps } from 'next/app'
 
 import { ThemeProvider } from 'styled-components'
@@ -8,11 +9,13 @@ import { defaultTheme } from '../styles/themes/themes'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <DefaultLayout>
-        <Component {...pageProps} />
-      </DefaultLayout>
+      <AnimateSharedLayout>
+        <DefaultLayout>
+          <Component {...pageProps} />
+        </DefaultLayout>
 
-      <GlobalStyled />
+        <GlobalStyled />
+      </AnimateSharedLayout>
     </ThemeProvider>
   )
 }

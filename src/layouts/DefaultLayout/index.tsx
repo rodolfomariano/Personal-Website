@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 import {
   CodeImageContainer,
@@ -73,7 +74,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         <SocialMediaContainer>
           <h3>Mídias Sociais</h3>
 
-          <ul>
+          <motion.ul layoutId="links-container" transition={{ duration: 0.8 }}>
             <li>
               <Link href="https://br.linkedin.com/in/rodolfo-mariano-de-souza-75106249">
                 <a target="_blank">Linkedin</a>
@@ -85,7 +86,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
                 <a target="_blank">GitHub</a>
               </Link>
             </li>
-          </ul>
+          </motion.ul>
         </SocialMediaContainer>
       )}
 

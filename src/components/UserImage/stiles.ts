@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   width: 272px;
 
   display: flex;
@@ -17,8 +18,13 @@ export const ImageContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+
+  svg {
+    width: 200px;
+    height: 260px;
+  }
 `
-export const ResumeButton = styled.button`
+export const ResumeButton = styled(motion.button)`
   width: 100%;
   padding: 8px 0;
   border-radius: 4px;

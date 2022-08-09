@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const Container = styled.main`
@@ -8,7 +9,7 @@ export const Container = styled.main`
   justify-content: center;
   gap: 48px;
 `
-export const PersonalData = styled.section`
+export const PersonalData = styled(motion.section)`
   height: 350px;
 
   display: flex;
@@ -16,7 +17,7 @@ export const PersonalData = styled.section`
   align-items: flex-start;
   gap: 24px;
 `
-export const TabsHeader = styled.div`
+export const TabsHeader = styled(motion.div)`
   position: relative;
   border-bottom: 2px solid ${({ theme }) => theme['gray-700-transparent']};
 
@@ -58,7 +59,7 @@ export const TableSelected = styled.div`
   transition: 300ms;
 `
 
-export const TabsContainer = styled.div`
+export const TabsContainer = styled(motion.div)`
   width: 100%;
   max-width: 700px;
   height: 100%;

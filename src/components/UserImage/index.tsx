@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { DownloadSimple } from 'phosphor-react'
+import { motion } from 'framer-motion'
 
 import {
   Container,
@@ -8,22 +9,30 @@ import {
   SocialMediaContainer,
 } from './stiles'
 
-import PersonalPicture from '../../assets/personal-picture.svg'
+import { ProfileImg } from '../ProfileImg'
 
 export function UserImage() {
   return (
-    <Container>
+    <Container
+      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <ImageContainer>
-        <PersonalPicture />
+        <ProfileImg size="small" />
       </ImageContainer>
 
-      <ResumeButton>
+      <ResumeButton
+        transition={{ delay: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <DownloadSimple size={16} />
         Curriculum
       </ResumeButton>
 
       <SocialMediaContainer>
-        <ul>
+        <motion.ul layoutId="links-container" transition={{ duration: 0.8 }}>
           <li>
             <Link href="https://br.linkedin.com/in/rodolfo-mariano-de-souza-75106249">
               <a target="_blank">Linkedin</a>
@@ -35,7 +44,7 @@ export function UserImage() {
               <a target="_blank">GitHub</a>
             </Link>
           </li>
-        </ul>
+        </motion.ul>
       </SocialMediaContainer>
     </Container>
   )

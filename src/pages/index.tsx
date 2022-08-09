@@ -4,7 +4,7 @@ import NoSSR from 'react-no-ssr'
 import Head from 'next/head'
 import { Container, Content, PictureContainer } from '../styles/Home.styles'
 
-import Picture from '../assets/personal-picture-big.svg'
+import { ProfileImg } from '../components/ProfileImg'
 
 export default function Home() {
   return (
@@ -13,7 +13,11 @@ export default function Home() {
         <title>Home</title>
       </Head>
 
-      <Content>
+      <Content
+        transition={{ delay: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <h1>
           <span className="emphasisTitle">Olá</span>, Eu Sou{' '}
           <strong>Rodolfo</strong>
@@ -64,7 +68,7 @@ export default function Home() {
       </Content>
 
       <PictureContainer>
-        <Picture />
+        <ProfileImg size="large" />
       </PictureContainer>
     </Container>
   )

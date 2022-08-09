@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import { Book, Clock, GraduationCap, Sparkle, User } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+
 import { StudyCard } from '../../components/StudyCard'
 import { TimeLineCard } from '../../components/TimeLineCard'
 import { UserImage } from '../../components/UserImage'
+
 import {
   Container,
   PersonalData,
@@ -60,8 +62,16 @@ export default function About() {
       <Container>
         <UserImage />
 
-        <PersonalData>
-          <TabsHeader>
+        <PersonalData
+          transition={{ duration: 1.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <TabsHeader
+            transition={{ duration: 1.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <TabesHeaderButton
               onClick={() => setTableSelected(0)}
               className={tableSelected === 0 ? 'active' : ''}
@@ -94,7 +104,12 @@ export default function About() {
             <TableSelected style={{ left: `${tableSelected}%` }} />
           </TabsHeader>
 
-          <TabsContainer id="tabsContainer">
+          <TabsContainer
+            id="tabsContainer"
+            transition={{ duration: 1.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <TableContent>
               <PersonalDescription
                 style={{ opacity: tableSelected !== 0 ? 0 : 1 }}

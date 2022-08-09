@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.main`
   width: 100wh;
@@ -9,7 +10,7 @@ export const Container = styled.main`
   justify-content: space-between;
 `
 
-export const Content = styled.section`
+export const Content = styled(motion.section)`
   h1 {
     font-size: 2rem;
     color: ${({ theme }) => theme.title};
