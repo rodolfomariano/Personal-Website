@@ -1,7 +1,9 @@
 import { Link } from 'phosphor-react'
+import { MotionProps } from 'framer-motion'
+
 import { Container } from './styles'
 
-interface StudyCardProps {
+interface StudyCardProps extends MotionProps {
   title: string
   link?: string
   month: string
@@ -15,9 +17,10 @@ export function StudyCard({
   month,
   year,
   institution,
+  ...res
 }: StudyCardProps) {
   return (
-    <Container>
+    <Container {...res}>
       <header>
         <h3>{title}</h3>
 

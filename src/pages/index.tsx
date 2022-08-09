@@ -14,9 +14,8 @@ export default function Home() {
       </Head>
 
       <Content
-        transition={{ delay: 0.8 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        animate={{ scale: [0, 1], opacity: [0, 1] }}
       >
         <h1>
           <span className="emphasisTitle">Olá</span>, Eu Sou{' '}

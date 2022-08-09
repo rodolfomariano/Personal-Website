@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   position: relative;
   z-index: 200;
   display: flex;
@@ -32,7 +33,7 @@ export const Circle = styled.div`
   }
 `
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   position: relative;
   flex: 1;
   padding: 8px 16px 20px 16px;

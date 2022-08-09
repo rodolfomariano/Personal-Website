@@ -111,9 +111,7 @@ export default function About() {
             animate={{ opacity: 1 }}
           >
             <TableContent>
-              <PersonalDescription
-                style={{ opacity: tableSelected !== 0 ? 0 : 1 }}
-              >
+              <PersonalDescription>
                 <h1>Rodolfo Mariano de Souza</h1>
 
                 <p>
@@ -133,7 +131,7 @@ export default function About() {
             </TableContent>
 
             <TableContent>
-              <TimeLine style={{ opacity: tableSelected !== 25 ? 0 : 1 }}>
+              <TimeLine>
                 <h1>Linha do tempo</h1>
 
                 <TimeLineContent>
@@ -155,7 +153,7 @@ export default function About() {
             </TableContent>
 
             <TableContent>
-              <Study style={{ opacity: tableSelected !== 50 ? 0 : 1 }}>
+              <Study>
                 <StudyOptionsContainer>
                   <StudyOptionButton
                     className={
@@ -177,55 +175,96 @@ export default function About() {
                 </StudyOptionsContainer>
 
                 <StudyCardContainer>
-                  {studyOption === 'university-graduate' ? (
-                    <>
-                      <StudyCard
-                        title="Pós - Desenvolvimento Mobile Mult Plataforma"
-                        month="Dezembro"
-                        year="2022"
-                        institution="Faculdade Descomplica"
-                      />
+                  <StudyCard
+                    title="Pós - Desenvolvimento Mobile Mult Plataforma"
+                    month="Dezembro"
+                    year="2022"
+                    institution="Faculdade Descomplica"
+                    animate={{
+                      scale:
+                        studyOption === 'university-graduate' ? [0, 1] : [1, 0],
+                      opacity: [0, 1],
+                      display:
+                        studyOption === 'university-graduate'
+                          ? 'block'
+                          : 'none',
+                    }}
+                    transition={{ duration: 0.5 }}
+                  />
 
-                      <StudyCard
-                        title="Bacharel - Ciência da Computação"
-                        month="Dezembro"
-                        year="2013"
-                        institution="Faculdade de Americana"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <StudyCard
-                        title="Docker"
-                        month="Fevereiro"
-                        year="2022"
-                        institution="Full Cycle"
-                        link="https://fullcycle.com.br/certificado/5b9657e8-1de6-4497-b65c-90c35fde6af7/"
-                      />
+                  <StudyCard
+                    title="Bacharel - Ciência da Computação"
+                    month="Dezembro"
+                    year="2013"
+                    institution="Faculdade de Americana"
+                    animate={{
+                      scale:
+                        studyOption === 'university-graduate' ? [0, 1] : [1, 0],
+                      opacity: [0, 1],
+                      display:
+                        studyOption === 'university-graduate'
+                          ? 'block'
+                          : 'none',
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: studyOption === 'university-graduate' ? 0.2 : 0,
+                    }}
+                  />
 
-                      <StudyCard
-                        title="Ignite - React Native"
-                        month="Julho"
-                        year="2021"
-                        institution="Rocketseat"
-                        link="https://app.rocketseat.com.br/certificates/6dd6ebe0-b240-409e-b0d9-d33712f4e0ff"
-                      />
+                  <StudyCard
+                    title="Docker"
+                    month="Fevereiro"
+                    year="2022"
+                    institution="Full Cycle"
+                    link="https://fullcycle.com.br/certificado/5b9657e8-1de6-4497-b65c-90c35fde6af7/"
+                    animate={{
+                      scale: studyOption === 'free-course' ? [0, 1] : [1, 0],
+                      opacity: [0, 1],
+                      display: studyOption === 'free-course' ? 'block' : 'none',
+                    }}
+                    transition={{ duration: 0.5 }}
+                  />
 
-                      <StudyCard
-                        title="Ignite - React.JS"
-                        month="Março"
-                        year="2021"
-                        institution="Rocketseat"
-                        link="https://app.rocketseat.com.br/certificates/957a083c-76db-4fe4-ba26-8fa886dda38b"
-                      />
-                    </>
-                  )}
+                  <StudyCard
+                    title="Ignite - React Native"
+                    month="Julho"
+                    year="2021"
+                    institution="Rocketseat"
+                    link="https://app.rocketseat.com.br/certificates/6dd6ebe0-b240-409e-b0d9-d33712f4e0ff"
+                    animate={{
+                      scale: studyOption === 'free-course' ? [0, 1] : [1, 0],
+                      opacity: [0, 1],
+                      display: studyOption === 'free-course' ? 'block' : 'none',
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: studyOption === 'free-course' ? 0.2 : 0,
+                    }}
+                  />
+
+                  <StudyCard
+                    title="Ignite - React.JS"
+                    month="Março"
+                    year="2021"
+                    institution="Rocketseat"
+                    link="https://app.rocketseat.com.br/certificates/957a083c-76db-4fe4-ba26-8fa886dda38b"
+                    animate={{
+                      scale: studyOption === 'free-course' ? [0, 1] : [1, 0],
+                      opacity: [0, 1],
+                      display: studyOption === 'free-course' ? 'block' : 'none',
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: studyOption === 'free-course' ? 0.5 : 0,
+                    }}
+                  />
                 </StudyCardContainer>
               </Study>
             </TableContent>
 
             <TableContent>
-              <Skills style={{ opacity: tableSelected !== 75 ? 0 : 1 }}>
+              <Skills>
                 <h1>Rodolfo Mariano de Souza4</h1>
               </Skills>
             </TableContent>
