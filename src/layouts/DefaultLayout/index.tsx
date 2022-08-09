@@ -30,36 +30,36 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         <DotsContainerImage />
       </DotsContainer>
 
-      <LayoutContent>
-        <MenuList>
-          <ul>
-            <li>
-              <Link href={'/'}>
-                <a className={asPath === '/' ? 'isActive' : ''}>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={'/about'}>
-                <a className={asPath === '/about' ? 'isActive' : ''}>Sobre</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={'/portfolio'}>
-                <a className={asPath === '/portfolio' ? 'isActive' : ''}>
-                  Portifólio
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href={'/contacts'}>
-                <a className={asPath === '/contacts' ? 'isActive' : ''}>
-                  Contato
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </MenuList>
+      <MenuList>
+        <ul>
+          <li>
+            <Link href={'/'}>
+              <a className={asPath === '/' ? 'isActive' : ''}>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href={'/about'}>
+              <a className={asPath === '/about' ? 'isActive' : ''}>Sobre</a>
+            </Link>
+          </li>
+          <li>
+            <Link href={'/portfolio'}>
+              <a className={asPath === '/portfolio' ? 'isActive' : ''}>
+                Portifólio
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href={'/contacts'}>
+              <a className={asPath === '/contacts' ? 'isActive' : ''}>
+                Contato
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </MenuList>
 
+      <LayoutContent>
         {asPath === '/' && (
           <ReactLogoContainer>
             <ReactImage />

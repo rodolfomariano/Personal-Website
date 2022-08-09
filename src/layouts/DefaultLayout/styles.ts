@@ -21,8 +21,10 @@ export const DotsContainer = styled.div`
 `
 
 export const MenuList = styled.nav`
-  position: relative;
-  z-index: 500;
+  position: absolute;
+  z-index: 900;
+  top: 24px;
+  right: 56px;
 
   ul {
     margin-left: auto;
