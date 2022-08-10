@@ -24,7 +24,7 @@ export const ImageContainer = styled.div`
     height: 260px;
   }
 `
-export const ResumeButton = styled(motion.button)`
+export const ResumeLink = styled(motion.a)`
   width: 100%;
   padding: 8px 0;
   border-radius: 4px;

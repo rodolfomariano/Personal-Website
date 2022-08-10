@@ -5,13 +5,16 @@ import { motion } from 'framer-motion'
 import {
   Container,
   ImageContainer,
-  ResumeButton,
+  ResumeLink,
   SocialMediaContainer,
 } from './stiles'
 
 import { ProfileImg } from '../ProfileImg'
 
 export function UserImage() {
+  const urlToDownload =
+    'https://firebasestorage.googleapis.com/v0/b/imagens-3dce0.appspot.com/o/Curriculum%20Rodolfo.pdf?alt=media&token=cd0f6fcc-4199-4e99-8f7d-dfd946f45ab3'
+
   return (
     <Container
       transition={{ duration: 0.8 }}
@@ -22,14 +25,18 @@ export function UserImage() {
         <ProfileImg size="small" />
       </ImageContainer>
 
-      <ResumeButton
+      <ResumeLink
+        href={urlToDownload}
+        download="rms.pdf"
+        target="_blank"
+        rel="noreferrer"
         transition={{ delay: 0.8 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <DownloadSimple size={16} />
         Curriculum
-      </ResumeButton>
+      </ResumeLink>
 
       <SocialMediaContainer>
         <motion.ul layoutId="links-container" transition={{ duration: 0.8 }}>
