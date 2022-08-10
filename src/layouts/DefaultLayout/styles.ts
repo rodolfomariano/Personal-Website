@@ -114,6 +114,11 @@ export const SocialMediaContainer = styled.div`
       color: ${({ theme }) => theme['gray-600']};
     }
   }
+
+  @media (max-width: 720px) {
+    bottom: 200px;
+    left: 8px;
+  }
 `
 
 export const Content = styled.main`

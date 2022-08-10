@@ -8,6 +8,11 @@ export const Container = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 720px) {
+    margin-top: 100px;
+    flex-direction: column-reverse;
+  }
 `
 
 export const Content = styled(motion.section)`
@@ -152,9 +157,22 @@ export const Content = styled(motion.section)`
             }
           }
         }
+
+        @media (max-width: 720px) {
+          font-size: 0.75rem;
+          line-height: 100%;
+        }
       }
     }
   }
 `
 
-export const PictureContainer = styled.section``
+export const PictureContainer = styled.section`
+  @media (max-width: 720px) {
+    img {
+      padding-top: 100px;
+      margin-left: 100px;
+      padding-bottom: 50px;
+    }
+  }
+`

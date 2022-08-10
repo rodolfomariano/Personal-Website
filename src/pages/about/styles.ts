@@ -8,6 +8,11 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   gap: 48px;
+
+  @media (max-width: 720px) {
+    margin-top: 100px;
+    flex-direction: column;
+  }
 `
 export const PersonalData = styled(motion.section)`
   height: 350px;
@@ -16,6 +21,12 @@ export const PersonalData = styled(motion.section)`
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+
+  @media (max-width: 720px) {
+    flex: 1;
+    width: 100%;
+    align-items: center;
+  }
 `
 export const TabsHeader = styled(motion.div)`
   position: relative;
@@ -47,6 +58,10 @@ export const TabesHeaderButton = styled.button`
   &.active {
     color: ${({ theme }) => theme.title};
   }
+
+  @media (max-width: 720px) {
+    width: 100px;
+  }
 `
 
 export const TableSelected = styled.div`
@@ -67,6 +82,10 @@ export const TabsContainer = styled(motion.div)`
   scroll-behavior: smooth;
 
   display: flex;
+
+  @media (max-width: 720px) {
+    fle: 1;
+  }
 `
 
 export const TableContent = styled.div`
@@ -82,7 +101,6 @@ export const PersonalDescription = styled.div`
 
   p {
     color: ${({ theme }) => theme.text};
-    /* font-size: 0.875rem; */
   }
 
   p + p {
@@ -195,4 +213,84 @@ export const StudyCardContainer = styled.div`
   gap: 16px;
 `
 
-export const Skills = styled.div``
+export const Skills = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 24px;
+  padding-right: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme['gray-700']};
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme['gray-800']};
+    border-radius: 4px;
+  }
+`
+
+export const SkillOptionsContainer = styled.div`
+  margin-bottom: 24px;
+
+  display: flex;
+  gap: 24px;
+`
+
+export const SkillOptionButton = styled.button`
+  background: transparent;
+  border: none;
+  color: ${({ theme }) => theme['gray-700']};
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: 300;
+  transition: 300ms;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &.active {
+    color: ${({ theme }) => theme.title};
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.title};
+  }
+`
+export const SkillContent = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    margin-bottom: 32px;
+    font-weight: 300;
+    color: ${({ theme }) => theme.text};
+
+    &.soft-skill {
+      margin-top: -168px;
+    }
+  }
+`
+
+export const SkillsCardContainer = styled.div`
+  margin-bottom: 56px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  &:not(.soft-skill):last-child {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`

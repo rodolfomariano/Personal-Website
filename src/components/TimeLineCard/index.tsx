@@ -17,7 +17,7 @@ export function TimeLineCard({
         <span>{period}</span>
       </Circle>
 
-      <Card whileHover={{ scale: 1.03 }}>
+      <Card whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
         <h2>{office}</h2>
 
         <p>{occupation}</p>

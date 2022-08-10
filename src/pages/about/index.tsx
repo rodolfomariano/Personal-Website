@@ -1,17 +1,41 @@
-import Head from 'next/head'
-import { Book, Clock, GraduationCap, Sparkle, User } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import {
+  Book,
+  Books,
+  ChalkboardTeacher,
+  Clock,
+  GraduationCap,
+  Sparkle,
+  User,
+} from 'phosphor-react'
 
 import { StudyCard } from '../../components/StudyCard'
 import { TimeLineCard } from '../../components/TimeLineCard'
 import { UserImage } from '../../components/UserImage'
+import { SkillCard } from '../../components/SkillCard'
+
+import Screens from '../../assets/screens.svg'
+import Mobile from '../../assets/mobile.svg'
+import GitHub from '../../assets/github.svg'
+import Jest from '../../assets/jest.svg'
+import Figma from '../../assets/figma.svg'
+import Docker from '../../assets/docker.svg'
+import Language from '../../assets/language.svg'
+import Organization from '../../assets/organization.svg'
+import Team from '../../assets/team.svg'
+import Creativity from '../../assets/creativity.svg'
 
 import {
   Container,
   PersonalData,
   PersonalDescription,
   Row,
+  SkillContent,
+  SkillOptionButton,
+  SkillOptionsContainer,
   Skills,
+  SkillsCardContainer,
   Study,
   StudyCardContainer,
   StudyOptionButton,
@@ -25,14 +49,13 @@ import {
   TimeLineContent,
 } from './styles'
 
-interface StudyOptions {
-  option: 'university-graduate' | 'free-course'
-}
-
 export default function About() {
   const [tableSelected, setTableSelected] = useState(0)
-  const [studyOption, setStudyOption] = useState<StudyOptions | string>(
-    'university-graduate',
+  const [studyOption, setStudyOption] = useState<
+    'university-graduate' | 'free-course'
+  >('university-graduate')
+  const [skillOption, setSkillOption] = useState<'hard-skills' | 'soft-skills'>(
+    'hard-skills',
   )
 
   useEffect(() => {
@@ -265,7 +288,183 @@ export default function About() {
 
             <TableContent>
               <Skills>
-                <h1>Rodolfo Mariano de Souza4</h1>
+                <SkillOptionsContainer>
+                  <SkillOptionButton
+                    className={skillOption === 'hard-skills' ? 'active' : ''}
+                    onClick={() => setSkillOption('hard-skills')}
+                  >
+                    <Books />
+                    Hard skills
+                  </SkillOptionButton>
+
+                  <SkillOptionButton
+                    className={skillOption === 'soft-skills' ? 'active' : ''}
+                    onClick={() => setSkillOption('soft-skills')}
+                  >
+                    <ChalkboardTeacher />
+                    Soft skills
+                  </SkillOptionButton>
+                </SkillOptionsContainer>
+
+                <SkillContent>
+                  {skillOption === 'hard-skills' && <h3>Desenvolvimento</h3>}
+
+                  <SkillsCardContainer>
+                    <SkillCard
+                      icon={<Screens />}
+                      title="Desenvolvimento Web Responsível"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <SkillCard
+                      icon={<Mobile />}
+                      title="Desenvolvimento Mobile Multplataforma"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 0.2 : 0,
+                      }}
+                    />
+                    <SkillCard
+                      icon={<GitHub />}
+                      title="Vercionamento de código"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 0.4 : 0,
+                      }}
+                    />
+                    <SkillCard
+                      icon={<Jest />}
+                      title="Testes unitários"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 0.6 : 0,
+                      }}
+                    />
+                    <SkillCard
+                      icon={<Docker />}
+                      title="Conteinerização"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 0.8 : 0,
+                      }}
+                    />
+                  </SkillsCardContainer>
+
+                  {skillOption === 'hard-skills' && <h3>Designer</h3>}
+
+                  <SkillsCardContainer>
+                    <SkillCard
+                      icon={<Figma />}
+                      title="Designer e Prototipação"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 1 : 0,
+                      }}
+                    />
+                  </SkillsCardContainer>
+
+                  {skillOption === 'hard-skills' && <h3>Idiomas</h3>}
+
+                  <SkillsCardContainer>
+                    <SkillCard
+                      icon={<Language />}
+                      title="Inglês intermediário"
+                      animate={{
+                        scale: skillOption === 'hard-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'hard-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'hard-skills' ? 1.2 : 0,
+                      }}
+                    />
+                  </SkillsCardContainer>
+
+                  {skillOption === 'soft-skills' && (
+                    <h3 className="soft-skill">Comportamental</h3>
+                  )}
+
+                  <SkillsCardContainer>
+                    <SkillCard
+                      icon={<Organization />}
+                      title="Organização"
+                      animate={{
+                        scale: skillOption === 'soft-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'soft-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                      }}
+                    />
+                    <SkillCard
+                      icon={<Team />}
+                      title="Trabalho em equipe"
+                      animate={{
+                        scale: skillOption === 'soft-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'soft-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'soft-skills' ? 0.2 : 0,
+                      }}
+                    />
+                    <SkillCard
+                      icon={<Creativity />}
+                      title="Criatividade"
+                      animate={{
+                        scale: skillOption === 'soft-skills' ? [0, 1] : [1, 0],
+                        opacity: [0, 1],
+                        display:
+                          skillOption === 'soft-skills' ? 'flex' : 'none',
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: skillOption === 'soft-skills' ? 0.4 : 0,
+                      }}
+                    />
+                  </SkillsCardContainer>
+                </SkillContent>
               </Skills>
             </TableContent>
           </TabsContainer>
