@@ -1,10 +1,23 @@
 import Head from 'next/head'
+import { useState } from 'react'
+import { PortfolioCard } from '../../components/PortfolioCard'
+import { ProjectsList } from '../../utils/projectsList'
 
-import { Container } from './styles'
-
-import { UserImage } from '../../components/UserImage'
+import {
+  Container,
+  OptionBar,
+  PortfolioContent,
+  PortfolioOptionsContainer,
+  PortfolioTypeButton,
+} from './styles'
 
 export default function Portfolio() {
+  const [portfolioType, setPortFolioType] = useState<'web' | 'mobile'>('web')
+
+  const projects = ProjectsList.filter(
+    (project) => project.type === portfolioType,
+  )
+
   return (
     <>
       <Head>
@@ -12,9 +25,40 @@ export default function Portfolio() {
       </Head>
 
       <Container>
-        <UserImage />
+        <PortfolioOptionsContainer>
+          <PortfolioTypeButton
+            onClick={() => setPortFolioType('web')}
+            className={portfolioType === 'web' ? 'isActive' : ''}
+          >
+            Web
+          </PortfolioTypeButton>
+          <PortfolioTypeButton
+            onClick={() => setPortFolioType('mobile')}
+            className={portfolioType === 'mobile' ? 'isActive' : ''}
+          >
+            Mobile
+          </PortfolioTypeButton>
 
-        <h1>Portfólio</h1>
+          <OptionBar style={{ left: portfolioType === 'web' ? 0 : '50%' }} />
+        </PortfolioOptionsContainer>
+
+        <PortfolioContent>
+          {projects ? (
+            projects.map((project) => {
+              return (
+                <PortfolioCard
+                  key={project.id}
+                  id={project.id}
+                  title={project.title}
+                  thumbnail={project.thumbnail}
+                  description={project.description}
+                />
+              )
+            })
+          ) : (
+            <p>Carregando</p>
+          )}
+        </PortfolioContent>
       </Container>
     </>
   )

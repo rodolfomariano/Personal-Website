@@ -17,6 +17,8 @@ import {
 import DotsContainerImage from '../../assets/dots-container.svg'
 import CodeImage from '../../assets/code-background.svg'
 import ReactImage from '../../assets/reactjs-icon-big.svg'
+import { Modal } from '../../components/Modal'
+import { useModal } from '../../hooks/useModal'
 
 interface DefaultLayoutProps {
   children: ReactNode
@@ -24,6 +26,8 @@ interface DefaultLayoutProps {
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   const { asPath } = useRouter()
+
+  const { modalIsOpen } = useModal()
 
   return (
     <LayoutContainer>
@@ -93,6 +97,8 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
       <CodeImageContainer>
         <CodeImage />
       </CodeImageContainer>
+
+      {modalIsOpen && <Modal />}
     </LayoutContainer>
   )
 }

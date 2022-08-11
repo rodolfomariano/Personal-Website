@@ -2,6 +2,7 @@ import { AnimateSharedLayout } from 'framer-motion'
 import type { AppProps } from 'next/app'
 
 import { ThemeProvider } from 'styled-components'
+import { ModalContextProvider } from '../contexts/modalContext'
 import { DefaultLayout } from '../layouts/DefaultLayout'
 import { GlobalStyled } from '../styles/global'
 import { defaultTheme } from '../styles/themes/themes'
@@ -9,13 +10,15 @@ import { defaultTheme } from '../styles/themes/themes'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AnimateSharedLayout>
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
+      <ModalContextProvider>
+        <AnimateSharedLayout>
+          <DefaultLayout>
+            <Component {...pageProps} />
+          </DefaultLayout>
 
-        <GlobalStyled />
-      </AnimateSharedLayout>
+          <GlobalStyled />
+        </AnimateSharedLayout>
+      </ModalContextProvider>
     </ThemeProvider>
   )
 }
