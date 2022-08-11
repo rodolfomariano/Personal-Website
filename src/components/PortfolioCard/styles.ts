@@ -18,7 +18,7 @@ export const Container = styled(motion.button)`
   align-items: center;
   justify-content: center;
 
-  svg {
+  img {
     width: 180px;
     height: 125px;
   }

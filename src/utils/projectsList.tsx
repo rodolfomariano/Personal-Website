@@ -1,7 +1,9 @@
-import MacroCalcImg from '../assets/portfolio-images/my-macro-calc.svg'
-import Coffee from '../assets/portfolio-images/coffee.svg'
-import Storybook from '../assets/portfolio-images/storybook.svg'
-import MyFinances from '../assets/portfolio-images/myFinances.svg'
+import MacroCalcImg from '../assets/portfolio-images/my-macro-calc.png'
+import Coffee from '../assets/portfolio-images/coffee.png'
+import Storybook from '../assets/portfolio-images/storybook.png'
+import MyFinances from '../assets/portfolio-images/myFinances.png'
+
+// import CoffeeImg from '../assets/portfolio-images/coffee.png'
 
 export const ProjectsList = [
   {
@@ -12,7 +14,7 @@ export const ProjectsList = [
     technologies: ['React js / Vite', 'Sass', 'Framer Motion', 'TypeScript'],
     projectLink: 'https://my-macro-calc.vercel.app/',
     githubLink: 'https://github.com/rodolfomariano/My-Macro-Calc',
-    thumbnail: <MacroCalcImg />,
+    thumbnail: MacroCalcImg,
     images: [],
     learnings: '',
   },
@@ -25,11 +27,11 @@ export const ProjectsList = [
       'React js / Vite',
       'Styled Components',
       'TypeScript',
-      'React DND',
+      'React DnD',
     ],
     projectLink: 'https://coffee-delivery-coral.vercel.app/',
     githubLink: 'https://github.com/rodolfomariano/Coffee-Delivery',
-    thumbnail: <Coffee />,
+    thumbnail: Coffee,
     images: [],
     learnings:
       'Nesse projeto de e-commerce Fake, pude aprender a lidar com a lib React DnD que auxilia na função de Drag and Drop(Arrastar e soltar), além de poder usar o hook reducer e também usar a técnica de layouts em projetos react.',
@@ -42,7 +44,7 @@ export const ProjectsList = [
     technologies: ['NextJS', 'Storybook', 'TypeScript', 'Stitches'],
     projectLink: '',
     githubLink: 'https://github.com/rodolfomariano/react-simple-form-componets',
-    thumbnail: <Storybook />,
+    thumbnail: Storybook,
     images: [],
     learnings:
       'Esse foi o meu primeiro projeto usando Storybook, muito útil para a criação de design system e para auxiliar no desenvolvimento usei a lib Stitches para facilitar a variação dos component.',
@@ -61,7 +63,7 @@ export const ProjectsList = [
     projectLink:
       'https://play.google.com/store/apps/details?id=com.myfinances_rms',
     githubLink: 'https://github.com/rodolfomariano/myfinances',
-    thumbnail: <MyFinances />,
+    thumbnail: MyFinances,
     images: [],
     learnings:
       'Nesse projeto pude praticar meus conhecimentos em React Native, autenticação social e salvar dados no aparelho, usando a lib AsyncStorage.',

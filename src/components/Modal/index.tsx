@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CaretLeft, CaretRight, X } from 'phosphor-react'
 import {
   CloseModalButton,
@@ -8,11 +9,10 @@ import {
   ProjectDetails,
 } from './styles'
 
-import MacroCalcImg from '../../assets/portfolio-images/my-macro-calc.svg'
 import { useModal } from '../../hooks/useModal'
 
 export function Modal() {
-  const { closeModal } = useModal()
+  const { modalData, closeModal } = useModal()
 
   return (
     <>
@@ -25,7 +25,7 @@ export function Modal() {
             <CaretLeft />
           </button>
 
-          <MacroCalcImg />
+          <Image src={modalData.thumbnail} alt="" />
 
           <button>
             <CaretRight />
@@ -33,13 +33,23 @@ export function Modal() {
         </ImageContainer>
 
         <Header>
-          <h1>My Macro Calc</h1>
+          <h1 style={{ fontSize: modalData.title.length > 17 ? 20 : 24 }}>
+            {modalData.title}
+          </h1>
 
+          {modalData.projectLink && (
+            <p>
+              Visite o projeto:{' '}
+              <a href={modalData.projectLink} target="_blank" rel="noreferrer">
+                {modalData.title}
+              </a>
+            </p>
+          )}
           <p>
-            Visite o projeto: <a href="">myMacroCal</a>
-          </p>
-          <p>
-            GitHub: <a href="">myMacroCal</a>
+            GitHub:{' '}
+            <a href={modalData.githubLink} target="_blank" rel="noreferrer">
+              {modalData.title}
+            </a>
           </p>
         </Header>
 
@@ -47,31 +57,18 @@ export function Modal() {
           <h2>Tecnologias utilizadas</h2>
 
           <ul>
-            <li>
-              <span>
-                <span>&#9679;</span> React JS / Vite
-              </span>
-            </li>
-            <li>
-              <span>
-                <span>&#9679;</span> Sass
-              </span>
-            </li>
-            <li>
-              <span>
-                <span>&#9679;</span> Framer Motion
-              </span>
-            </li>
+            {modalData.technologies.map((technology) => (
+              <li key={technology}>
+                <span>
+                  <span>&#9679;</span> {technology}
+                </span>
+              </li>
+            ))}
           </ul>
 
           <h2>Aprendizados</h2>
 
-          <p>
-            Nesse projeto de e-commerce Fake, pude aprender a lidar com a lib
-            React DnD que auxilia na função de Drag and Drop(Arrastar e soltar),
-            além de poder usar o hook reducer e também usar a técnica de layouts
-            em projetos react.
-          </p>
+          <p>{modalData.learnings}</p>
         </ProjectDetails>
       </ModalContent>
 

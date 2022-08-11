@@ -1,28 +1,33 @@
+import Image from 'next/image'
 import { MotionProps } from 'framer-motion'
 
 import { Container, ProjectInfoContainer } from './styles'
 
-import { ReactElement } from 'react'
 import { useModal } from '../../hooks/useModal'
 
 interface PortfolioCardProps extends MotionProps {
-  id: string
-  thumbnail: ReactElement
-  title: string
-  description: string
+  data: {
+    id: string
+    title: string
+    type: string
+    description: string
+    technologies: string[]
+    projectLink?: string
+    githubLink?: string
+    thumbnail: string | any
+    images: string[]
+    learnings: string
+  }
 }
 
-export function PortfolioCard({
-  id,
-  thumbnail,
-  title,
-  description,
-}: PortfolioCardProps) {
+export function PortfolioCard({ data }: PortfolioCardProps) {
   const { openModal } = useModal()
 
+  const { thumbnail, title, description } = data
+
   return (
-    <Container onClick={openModal}>
-      {thumbnail}
+    <Container onClick={() => openModal(data)}>
+      <Image src={thumbnail} alt="" width={180} height={125} />
       <ProjectInfoContainer>
         <h2>{title}</h2>
 

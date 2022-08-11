@@ -1,8 +1,22 @@
 import { createContext, ReactNode, useState } from 'react'
 
+interface ModalDataProps {
+  id: string
+  title: string
+  type: string
+  description: string
+  technologies: string[]
+  projectLink?: string
+  githubLink?: string
+  thumbnail: string
+  images: string[]
+  learnings: string
+}
+
 interface ModalContextProps {
   modalIsOpen: boolean
-  openModal: () => void
+  modalData: ModalDataProps
+  openModal: (data: ModalDataProps) => void
   closeModal: () => void
 }
 
@@ -14,9 +28,13 @@ export const ModalContext = createContext({} as ModalContextProps)
 
 export function ModalContextProvider({ children }: ModalContextProviderProps) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalData, setModalData] = useState<ModalDataProps>(
+    {} as ModalDataProps,
+  )
 
-  function openModal() {
+  function openModal(data: ModalDataProps) {
     setModalIsOpen(true)
+    setModalData(data)
   }
 
   function closeModal() {
@@ -24,7 +42,9 @@ export function ModalContextProvider({ children }: ModalContextProviderProps) {
   }
 
   return (
-    <ModalContext.Provider value={{ modalIsOpen, openModal, closeModal }}>
+    <ModalContext.Provider
+      value={{ modalIsOpen, modalData, openModal, closeModal }}
+    >
       {children}
     </ModalContext.Provider>
   )

@@ -45,15 +45,7 @@ export default function Portfolio() {
         <PortfolioContent>
           {projects ? (
             projects.map((project) => {
-              return (
-                <PortfolioCard
-                  key={project.id}
-                  id={project.id}
-                  title={project.title}
-                  thumbnail={project.thumbnail}
-                  description={project.description}
-                />
-              )
+              return <PortfolioCard key={project.id} data={project} />
             })
           ) : (
             <p>Carregando</p>
