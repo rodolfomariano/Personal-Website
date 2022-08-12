@@ -9,15 +9,26 @@ export const LayoutContent = styled.div`
   position: relative;
   z-index: 500;
   max-width: 1300px;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 24px 32px;
+
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 720px) {
+    padding: 24px 8px;
+  }
 `
 
 export const DotsContainer = styled.div`
   position: absolute;
   top: 24px;
   left: 56px;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `
 
 export const MenuList = styled.nav`
@@ -61,12 +72,21 @@ export const MenuList = styled.nav`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    right: 50%;
+    margin-right: -168px;
+  }
 `
 
 export const CodeImageContainer = styled.div`
   position: absolute;
   bottom: 56px;
   right: 56px;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `
 
 export const ReactLogoContainer = styled.div`
@@ -79,6 +99,10 @@ export const ReactLogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `
 
 export const SocialMediaContainer = styled.div`
@@ -114,11 +138,6 @@ export const SocialMediaContainer = styled.div`
       color: ${({ theme }) => theme['gray-600']};
     }
   }
-
-  @media (max-width: 720px) {
-    bottom: 200px;
-    left: 8px;
-  }
 `
 
 export const Content = styled.main`
@@ -126,4 +145,12 @@ export const Content = styled.main`
   z-index: 800;
   width: 100%;
   height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 720px) {
+    overflow: hidden;
+  }
 `

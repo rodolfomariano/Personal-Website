@@ -21,8 +21,9 @@ export const Picture = styled(motion.img)<PictureProps>`
         `
       case 'large':
         return css`
-          width: 498px;
-          height: 664px;
+          width: 100%;
+          max-width: 498px;
+          max-height: 664px;
         `
       default:
         break

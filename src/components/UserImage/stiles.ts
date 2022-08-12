@@ -73,4 +73,17 @@ export const SocialMediaContainer = styled.div`
       color: ${({ theme }) => theme['gray-600']};
     }
   }
+
+  @media (max-width: 720px) {
+    display: flex;
+
+    ul {
+      margin-top: 0;
+      align-items: center;
+
+      span {
+        font-size: 6px;
+      }
+    }
+  }
 `

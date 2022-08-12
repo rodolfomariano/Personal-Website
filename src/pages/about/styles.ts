@@ -16,6 +16,7 @@ export const Container = styled.main`
 `
 export const PersonalData = styled(motion.section)`
   height: 350px;
+  /* width: 100%; */
 
   display: flex;
   flex-direction: column;
@@ -23,8 +24,8 @@ export const PersonalData = styled(motion.section)`
   gap: 24px;
 
   @media (max-width: 720px) {
-    flex: 1;
-    width: 100%;
+    /* flex: 1; */
+    /* width: 100%; */
     align-items: center;
   }
 `
@@ -60,7 +61,7 @@ export const TabesHeaderButton = styled.button`
   }
 
   @media (max-width: 720px) {
-    width: 100px;
+    width: 90px;
   }
 `
 
@@ -84,7 +85,8 @@ export const TabsContainer = styled(motion.div)`
   display: flex;
 
   @media (max-width: 720px) {
-    fle: 1;
+    max-width: calc(100vw - 32px);
+    flex: 1;
   }
 `
 
@@ -94,6 +96,9 @@ export const TableContent = styled.div`
 `
 
 export const PersonalDescription = styled.div`
+  width: 100%;
+  height: 100%;
+
   h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -109,6 +114,7 @@ export const PersonalDescription = styled.div`
 `
 
 export const TimeLine = styled.div`
+  flex: 1;
   height: 100%;
   overflow-y: auto;
   padding-bottom: 24px;
@@ -136,7 +142,7 @@ export const TimeLine = styled.div`
 export const TimeLineContent = styled.div`
   position: relative;
   flex: 1;
-  padding: 24px 24px 24px 0;
+  padding: 24px 24px 0 0;
 
   display: flex;
   flex-direction: column;
@@ -155,6 +161,7 @@ export const Row = styled.div`
 `
 
 export const Study = styled.div`
+  flex: 1;
   height: 100%;
   overflow-y: auto;
   padding-bottom: 24px;
@@ -292,5 +299,9 @@ export const SkillsCardContainer = styled.div`
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px;
   }
 `

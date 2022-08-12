@@ -3,11 +3,16 @@ import styled from 'styled-components'
 export const Container = styled.main`
   width: 100%;
   height: 100%;
-  padding-top: 150px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 720px) {
+    height: 100vh;
+    margin-top: 100px;
+    flex-direction: column;
+  }
 `
 export const PortfolioOptionsContainer = styled.header`
   position: relative;

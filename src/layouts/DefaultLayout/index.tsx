@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
@@ -25,9 +25,30 @@ interface DefaultLayoutProps {
 }
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
+  const [isMobile, setIsMobile] = useState(false)
   const { asPath } = useRouter()
 
   const { modalIsOpen } = useModal()
+
+  useEffect(() => {
+    const checkDevice = () => {
+      if (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        return setIsMobile(true)
+      } else {
+        return setIsMobile(false)
+      }
+    }
+
+    checkDevice()
+  }, [])
 
   return (
     <LayoutContainer>
@@ -74,7 +95,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         <Content>{children}</Content>
       </LayoutContent>
 
-      {asPath === '/' && (
+      {asPath === '/' && !isMobile && (
         <SocialMediaContainer>
           <h3>Mídias Sociais</h3>
 

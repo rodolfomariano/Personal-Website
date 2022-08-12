@@ -4,6 +4,7 @@ import styled from 'styled-components'
 export const Container = styled(motion.div)`
   position: relative;
   z-index: 200;
+
   display: flex;
   gap: 24px;
 `
@@ -39,7 +40,6 @@ export const Card = styled(motion.div)`
   padding: 8px 16px 20px 16px;
   background-color: ${({ theme }) => theme['gray-800']};
   border-radius: 4px;
-  margin-top: 16px;
 
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ export const Card = styled(motion.div)`
 
 export const Triangle = styled.div`
   position: absolute;
-  top: 8px;
+  top: 24px;
   left: -16px;
   width: 0;
   height: 0;

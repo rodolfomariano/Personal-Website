@@ -1,10 +1,17 @@
 import { GetStaticProps } from 'next'
 import NoSSR from 'react-no-ssr'
+import { motion } from 'framer-motion'
 
 import Head from 'next/head'
-import { Container, Content, PictureContainer } from '../styles/Home.styles'
+import {
+  Container,
+  Content,
+  PictureContainer,
+  SocialMediaContainer,
+} from '../styles/Home.styles'
 
 import { ProfileImg } from '../components/ProfileImg'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -65,6 +72,24 @@ export default function Home() {
           </code>
         </pre>
       </Content>
+
+      <SocialMediaContainer>
+        <h3>Mídias Sociais</h3>
+
+        <motion.ul layoutId="links-container" transition={{ duration: 0.8 }}>
+          <li>
+            <Link href="https://br.linkedin.com/in/rodolfo-mariano-de-souza-75106249">
+              <a target="_blank">Linkedin</a>
+            </Link>
+          </li>
+          <span>&#9679;</span>
+          <li>
+            <Link href="https://github.com/rodolfomariano">
+              <a target="_blank">GitHub</a>
+            </Link>
+          </li>
+        </motion.ul>
+      </SocialMediaContainer>
 
       <PictureContainer>
         <ProfileImg size="large" />

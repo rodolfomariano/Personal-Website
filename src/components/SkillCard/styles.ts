@@ -19,4 +19,8 @@ export const Container = styled(motion.div)`
     color: ${({ theme }) => theme['gray-600']};
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    width: 160px;
+  }
 `

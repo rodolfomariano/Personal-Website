@@ -8,10 +8,13 @@ export const Container = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
 
   @media (max-width: 720px) {
     margin-top: 100px;
     flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -24,6 +27,10 @@ export const Content = styled(motion.section)`
     span {
       color: ${({ theme }) => theme.primary};
       font-size: 2.25rem;
+    }
+
+    @media (max-width: 720px) {
+      text-align: center;
     }
   }
 
@@ -41,7 +48,7 @@ export const Content = styled(motion.section)`
       color: ${({ theme }) => theme.primary};
       overflow: hidden;
       line-height: 32px;
-      height: 32px;
+      height: 31px;
 
       ul {
         li {
@@ -81,6 +88,38 @@ export const Content = styled(motion.section)`
           left: 0;
         }
       }
+    }
+
+    @media (max-width: 720px) {
+      margin-top: 0;
+
+      span {
+        height: 30px;
+        @keyframes typing {
+          50% {
+            left: 100%;
+            margin: 0 -36px 0 62px;
+          }
+          100% {
+            left: 0;
+          }
+        }
+
+        ul {
+          li {
+            @keyframes slide {
+              100% {
+                top: -62px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 720px) {
+      width: 100%;
+      justify-content: center;
     }
   }
 
@@ -157,11 +196,60 @@ export const Content = styled(motion.section)`
             }
           }
         }
+      }
+    }
 
-        @media (max-width: 720px) {
-          font-size: 0.75rem;
-          line-height: 100%;
-        }
+    @media (max-width: 720px) {
+      font-size: 0.75rem;
+    }
+  }
+`
+
+export const SocialMediaContainer = styled.div`
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  h3 {
+    font-family: 'Outfit';
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.2em;
+    color: ${({ theme }) => theme['gray-400']};
+  }
+
+  ul {
+    margin-top: 10px;
+
+    display: flex;
+    gap: 12px;
+
+    li {
+      color: ${({ theme }) => theme['gray-600']};
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
+    span {
+      color: ${({ theme }) => theme['gray-600']};
+    }
+  }
+
+  @media (max-width: 720px) {
+    display: flex;
+
+    ul {
+      margin-top: 0;
+      align-items: center;
+
+      span {
+        font-size: 6px;
       }
     }
   }
@@ -170,9 +258,9 @@ export const Content = styled(motion.section)`
 export const PictureContainer = styled.section`
   @media (max-width: 720px) {
     img {
-      padding-top: 100px;
-      margin-left: 100px;
-      padding-bottom: 50px;
+      /* padding-top: 100px; */
+      /* margin-left: 100px; */
+      /* padding-bottom: 50px; */
     }
   }
 `
