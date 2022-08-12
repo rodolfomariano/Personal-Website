@@ -10,7 +10,9 @@ export const ModalBackdrop = styled(motion.div)`
   min-height: 100vh;
   background-color: ${({ theme }) => theme['modal-backdrop']};
   backdrop-filter: blur(0.75px);
-  cursor: pointer;
+  cursor: url(https://firebasestorage.googleapis.com/v0/b/imagens-3dce0.appspot.com/o/X.png?alt=media&token=320729ef-21e2-4513-b9c1-bc6305919c14)
+      2 2,
+    pointer;
 `
 
 export const ModalContent = styled(motion.div)`
