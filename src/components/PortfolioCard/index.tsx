@@ -20,13 +20,13 @@ interface PortfolioCardProps extends MotionProps {
   }
 }
 
-export function PortfolioCard({ data }: PortfolioCardProps) {
+export function PortfolioCard({ data, ...rest }: PortfolioCardProps) {
   const { openModal } = useModal()
 
   const { thumbnail, title, description } = data
 
   return (
-    <Container onClick={() => openModal(data)}>
+    <Container onClick={() => openModal(data)} {...rest}>
       <Image src={thumbnail} alt="" width={180} height={125} />
       <ProjectInfoContainer>
         <h2>{title}</h2>

@@ -10,14 +10,28 @@ import {
 } from './styles'
 
 import { useModal } from '../../hooks/useModal'
+import { useState } from 'react'
 
 export function Modal() {
-  const { modalData, closeModal } = useModal()
+  const { modalData, closeModal, modalIsOpen } = useModal()
+
+  const [isOpen, setIsOpen] = useState(modalIsOpen)
+
+  function handleCloseModal() {
+    setTimeout(() => {
+      closeModal()
+    }, 750)
+
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
-      <ModalContent>
-        <CloseModalButton onClick={closeModal}>
+      <ModalContent
+        animate={isOpen ? { scale: [0, 1.2, 1] } : { scale: [1, 1.2, 0] }}
+        transition={{ duration: 0.75, delay: 0 }}
+      >
+        <CloseModalButton onClick={handleCloseModal}>
           <X />
         </CloseModalButton>
         <ImageContainer>
@@ -72,7 +86,7 @@ export function Modal() {
         </ProjectDetails>
       </ModalContent>
 
-      <ModalBackdrop onClick={closeModal} />
+      <ModalBackdrop onClick={handleCloseModal} />
     </>
   )
 }

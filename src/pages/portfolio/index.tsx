@@ -44,8 +44,21 @@ export default function Portfolio() {
 
         <PortfolioContent>
           {projects ? (
-            projects.map((project) => {
-              return <PortfolioCard key={project.id} data={project} />
+            projects.map((project, index) => {
+              return (
+                <PortfolioCard
+                  key={project.id}
+                  data={project}
+                  animate={{
+                    scale: [0, 1],
+                    opacity: [0, 1],
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index !== 0 ? 0.2 * index : 0,
+                  }}
+                />
+              )
             })
           ) : (
             <p>Carregando</p>
