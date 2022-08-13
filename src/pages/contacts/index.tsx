@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { At, Phone } from 'phosphor-react'
+import { At, Phone, WhatsappLogo } from 'phosphor-react'
 import {
   ContactsContent,
   Container,
@@ -53,7 +53,14 @@ export default function Contacts() {
 
               <div>
                 <h2>Telefone</h2>
-                <a href="tel:+5519998133263">(19) 9 9813-3263</a>
+                <a
+                  href="https://wa.me/5519998133263"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <WhatsappLogo />
+                  (19) 9 9813-3263
+                </a>
               </div>
             </div>
           </div>

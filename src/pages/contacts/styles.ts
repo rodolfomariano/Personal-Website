@@ -49,6 +49,20 @@ export const ContactsContent = styled.section`
         a {
           font-size: 0.875rem;
           color: ${({ theme }) => theme.link};
+          transition: 300ms;
+
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          svg {
+            font-size: 16px;
+            color: ${({ theme }) => theme['whatsapp-color']};
+          }
+
+          &:hover {
+            filter: brightness(0.8);
+          }
         }
       }
     }
@@ -66,6 +80,12 @@ export const SocialIconsContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
+
+  a {
+    svg {
+      transition: 300ms;
+    }
+  }
 
   a:hover {
     svg {

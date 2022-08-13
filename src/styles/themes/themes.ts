@@ -16,6 +16,8 @@ export const defaultTheme = {
   variable: '#F2DC96',
   operator: '#BF499E',
 
+  'whatsapp-color': '#25D366',
+
   'string-transparent': '#E3AD0022',
   'modal-backdrop': '#00000055',
   'close-button-hover': '#D35C5C',
