@@ -305,3 +305,4 @@ export const SkillsCardContainer = styled.div`
     gap: 8px;
   }
 `
+export default Container

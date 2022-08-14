@@ -1,5 +1,8 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { At, Phone, WhatsappLogo } from 'phosphor-react'
+
 import {
   ContactsContent,
   Container,
@@ -10,7 +13,6 @@ import {
 
 import LinkedinLogo from '../../assets/social-icons/linkedin.svg'
 import GitHubLogo from '../../assets/social-icons/github.svg'
-import Link from 'next/link'
 import MessagesImage from '../../assets/messages.svg'
 
 export default function Contacts() {
@@ -88,4 +90,11 @@ export default function Contacts() {
       </Container>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60 * 60 * 24,
+  }
 }

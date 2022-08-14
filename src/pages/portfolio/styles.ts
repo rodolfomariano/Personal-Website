@@ -62,3 +62,4 @@ export const PortfolioContent = styled.section`
   flex-wrap: wrap;
   gap: 24px;
 `
+export default Container

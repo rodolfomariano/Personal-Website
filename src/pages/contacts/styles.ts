@@ -98,3 +98,4 @@ export const ImageContainer = styled.div`
     display: none;
   }
 `
+export default Container

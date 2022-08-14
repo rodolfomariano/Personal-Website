@@ -1,5 +1,7 @@
-import Head from 'next/head'
 import { useState } from 'react'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+
 import { PortfolioCard } from '../../components/PortfolioCard'
 import { ProjectsList } from '../../utils/projectsList'
 
@@ -67,4 +69,11 @@ export default function Portfolio() {
       </Container>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60 * 60 * 24,
+  }
 }

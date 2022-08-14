@@ -1,5 +1,7 @@
+import { GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+
 import {
   Book,
   Books,
@@ -472,4 +474,11 @@ export default function About() {
       </Container>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60 * 60 * 24,
+  }
 }
