@@ -71,7 +71,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
           <li>
             <Link href={'/portfolio'}>
               <a className={asPath === '/portfolio' ? 'isActive' : ''}>
-                Portifólio
+                Portfólio
               </a>
             </Link>
           </li>
