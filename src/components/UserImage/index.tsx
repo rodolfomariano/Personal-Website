@@ -13,7 +13,7 @@ import { ProfileImg } from '../ProfileImg'
 
 export function UserImage() {
   const urlToDownload =
-    'https://firebasestorage.googleapis.com/v0/b/imagens-3dce0.appspot.com/o/Curriculum%20Rodolfo.pdf?alt=media&token=cd0f6fcc-4199-4e99-8f7d-dfd946f45ab3'
+    'https://firebasestorage.googleapis.com/v0/b/imagens-3dce0.appspot.com/o/Curriculum%20Rodolfo.pdf?alt=media&token=12652e92-dac4-4b8b-84e5-f734f557e12b'
 
   return (
     <Container

@@ -3,8 +3,6 @@ import Coffee from '../assets/portfolio-images/coffee.png'
 import Storybook from '../assets/portfolio-images/storybook.png'
 import MyFinances from '../assets/portfolio-images/myFinances.png'
 
-// import CoffeeImg from '../assets/portfolio-images/coffee.png'
-
 export const ProjectsList = [
   {
     id: '1',
@@ -16,7 +14,8 @@ export const ProjectsList = [
     githubLink: 'https://github.com/rodolfomariano/My-Macro-Calc',
     thumbnail: MacroCalcImg,
     images: [],
-    learnings: '',
+    learnings:
+      'O principal ensinamento desse projeto foi a importância de entender o core do sistema, por exemplo, para desenvolver esse projeto tive que aprender conceitos como: GET(Gasto Energético Total), GEB(Gasto Energético Basal) entre outros.',
   },
   {
     id: '2',
