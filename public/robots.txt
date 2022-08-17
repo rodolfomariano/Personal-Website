@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rodolfo.dev.br
+
+# Sitemaps
+Sitemap: https://rodolfo.dev.br/sitemap.xml
