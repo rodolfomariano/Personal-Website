@@ -76,6 +76,16 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
             </Link>
           </li>
           <li>
+            <Link href={'https://cantodev.com.br'}>
+              <a
+                className={asPath === '/portfolio' ? 'isActive' : ''}
+                target="_blank"
+              >
+                Blog
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href={'/contacts'}>
               <a className={asPath === '/contacts' ? 'isActive' : ''}>
                 Contato
