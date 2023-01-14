@@ -76,6 +76,15 @@ export const MenuList = styled.nav`
   @media (max-width: 768px) {
     right: 50%;
     margin-right: -168px;
+
+    li {
+      margin-right: 8px;
+      margin-left: -8px;
+    }
+
+    a {
+      font-size: 0.75rem;
+    }
   }
 `
 
