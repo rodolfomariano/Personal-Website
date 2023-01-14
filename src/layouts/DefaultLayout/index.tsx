@@ -78,7 +78,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
           <li>
             <Link href={'https://cantodev.com.br'}>
               <a
-                className={asPath === '/portfolio' ? 'isActive' : ''}
+                className={asPath === '/blog' ? 'isActive' : ''}
                 target="_blank"
               >
                 Blog
