@@ -13,6 +13,7 @@ import {
 
 import LinkedinLogo from '../../assets/social-icons/linkedin.svg'
 import GitHubLogo from '../../assets/social-icons/github.svg'
+import InstagramLogo from '../../assets/social-icons/instagram.svg'
 import MessagesImage from '../../assets/messages.svg'
 
 export default function Contacts() {
@@ -79,6 +80,11 @@ export default function Contacts() {
             <Link href="https://github.com/rodolfomariano">
               <a target="_blank">
                 <GitHubLogo />
+              </a>
+            </Link>
+            <Link href="https://instagram.com/rodolfomdsouza/">
+              <a target="_blank">
+                <InstagramLogo />
               </a>
             </Link>
           </SocialIconsContainer>

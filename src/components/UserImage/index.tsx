@@ -51,6 +51,12 @@ export function UserImage() {
               <a target="_blank">GitHub</a>
             </Link>
           </li>
+          <span>&#9679;</span>
+          <li>
+            <Link href="https://instagram.com/rodolfomdsouza/">
+              <a target="_blank">Instagram</a>
+            </Link>
+          </li>
         </motion.ul>
       </SocialMediaContainer>
     </Container>
