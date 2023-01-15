@@ -144,13 +144,20 @@ export default function About() {
                   Desenvolvimento Mobile Mult Plataforma, sempre gostei do
                   aspécto visual das páginas e plataformas digitais, levando
                   isso em conta, dedico o meu tempo estudando e praticando tudo
-                  relacionado ao designer visual.
+                  relacionado ao desenvolvimento frontend e designer visual.
                 </p>
 
                 <p>
-                  Em meu tempo livre, gosto de assistir filmes e séries, em
-                  especial de ação e de aventura, também gosto de ver programas
-                  de reforma e artes marciais.
+                  Pensando em somar na comunidade, crie o blog{' '}
+                  <a
+                    href="https://cantodev.com.br"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    cantodev
+                  </a>
+                  , onde posto conteúdos relevantes ao universo de
+                  desenvolvimento, designer e tecnologia no geral.
                 </p>
               </PersonalDescription>
             </TableContent>

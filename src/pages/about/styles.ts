@@ -106,6 +106,15 @@ export const PersonalDescription = styled.div`
 
   p {
     color: ${({ theme }) => theme.text};
+
+    a {
+      color: ${({ theme }) => theme.link};
+      transition: 300ms;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   }
 
   p + p {
